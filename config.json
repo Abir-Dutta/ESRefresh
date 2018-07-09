@@ -1,0 +1,28 @@
+{
+    "esConfiguration":{
+        "sourceURL":"http://lb-earmapz5xwahm.eastus2.cloudapp.azure.com:9200/",
+        "sourceIndex":"restored-rpdi-search-new-515",
+        "destinationURL":"http://lb-earmapz5xwahm.eastus2.cloudapp.azure.com:9200/",
+        "destinationIndex":"rpdi-dev",
+        "username":"username",
+        "password":"password",
+        "entityType":"lease-comp",
+        "batchSize":1000
+    },
+    "sqlConfiguration":{
+        "dbServer":"USADCPDM90",
+        "dbName":"RPDW_DEV",
+        "username":"username",
+        "password":"password",
+        "entityType":"lease-comp",
+        "maximumOpenDBConnection":100,
+        "batchSize":20,
+        "filterSQL":"SELECT top 53 ROWID_OBJECT FROM PROPERTY_MASTER_ORS.C_B_LEASE_COMPARABLES",
+        "storedProc":
+            {
+                "lease-comp":"PROPERTY_MASTER_ORS.INCREMENTAL_PROCESS_LEASE_COMP_AGENCY,PROPERTY_MASTER_ORS.GET_PROPERTY_FOR_LEASE_COMP",
+                "sale-comp":"PROPERTY_MASTER_ORS.INCREMENTAL_PROCESS_SALE_COMP,PROPERTY_MASTER_ORS.GET_PROPERTY_FOR_SALE_COMP",
+                "property":"PROPERTY_MASTER_ORS.INCREMENTAL_PROCESS_PROPERTY"
+            }
+    }
+}
